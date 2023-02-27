@@ -47,7 +47,7 @@ if(isset($_POST['entrar'])){
       crossorigin="anonymous"/>
     <link rel="stylesheet" href="./estilos.css"/>
   </head>
-  <body class="d-flex justify-content-center align-items-center vh-100">
+  <body id="fondo" class="d-flex justify-content-center align-items-center vh-100">
     <div
       class="bg-white p-5 rounded-5 text-secondary shadow"
       style="width: 25rem">

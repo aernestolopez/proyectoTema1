@@ -1,3 +1,6 @@
-body{
+#fondo{
     background-image: radial-gradient(circle at 50% -20.71%, #cfa8ff 0, #9d8bff 25%, #6c6cd8 50%, #3f4ea4 75%, #153375 100%);
+}
+#center{
+    text-align: center;
 }
