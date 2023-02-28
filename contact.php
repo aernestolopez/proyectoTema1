@@ -21,6 +21,7 @@ $nombre = $elresul['nick'];
     <link rel="shortcut icon" href="./img/logo.ico">
     <link rel="stylesheet" href="./estilos.css"/>
     <script src="./comprobacion.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"
@@ -56,7 +57,16 @@ $nombre = $elresul['nick'];
     </nav>
 
     <div id="center">
-        <h2>Para contactar con nosotros introduzca los siguientes datos</h2>
+    <div id="app-2">
+        <h1 v-bind:title="message">Contáctanos</h1>
+    </div>
+        <div id="app-4">
+        <ol class="list">
+            <li style="text-align: center;" v-for="todo in todos">
+                {{ todo.text }}
+            </li>
+        </ol>
+        
     <form onsubmit="comprobar()">
         <div id="email">
             <label>Introduzca su correo:
@@ -71,6 +81,28 @@ $nombre = $elresul['nick'];
         <input name="submit1" type="submit">
     </form>
     </div>
+    </div>
+    <script>
+        var app4 = new Vue({
+            el: '#app-4',
+            data: {
+                todos: [
+                    { text: 'Introduzca su correo' },
+                    { text: 'Introduzca el mensaje' },
+                    { text: 'Envíe el formulario' }
+                ]
+            }
+        })
+    </script>
+
+<script>
+        var app2 = new Vue({
+            el: '#app-2',
+            data: {
+                message: 'Usted cargó esta página el ' + new Date().toLocaleString()
+            }
+        })
+    </script>
 </body>
 
 </html>
