@@ -10,34 +10,31 @@ function comprobar() {
            //controlamos que en la direccion de correo exista @ y termine con ".com" o ".es"
            if(input.includes("@") && (input.endsWith(".com")) || input.endsWith(".es")) {
                //Habilitamos el boton
+               var div=document.getElementById("errorEmail");
+               div.innerHTML=''
+               div.removeChild()
                
            }else{
-               var div=document.getElementById("email");
+               var div=document.getElementById("errorEmail");
                //TODO: HACER QUE EL P SE BORRE SI ESTA BIEN
                //
-                   var error=document.createElement("p");
-                   var errorText=document.createTextNode("El email no es correcto");
-                   error.appendChild(errorText);
-                   error.style.color="red";
-                   div.appendChild(error);
+               div.innerHTML='El email no es correcto'
+                   div.style.color="red";
+
            }
        }
         if (tipo=="text"){
             //Controlamos que el tamaño maximo sea 12
             var input=inputs.namedItem("text").value;
             if (input.length===0 || input.length>12){
-                var div=document.getElementById("text");
-                
-                    var error=document.createElement("p");
-                    var errorText=document.createTextNode("El texto tiene 0 caracteres o mas de 12 caracteres");
-                    error.appendChild(errorText);
-                    error.style.color="red";
-                    div.appendChild(error); 
+                var div=document.getElementById("errorTexto");
+                div.innerHTML='El texto tiene 0 caracteres o mas de 12 caracteres'
+                div.style.color="red";
+            }else{
+                var div=document.getElementById("errorTexto");
+                div.innerHTML=''
             }
         }
-        var p=document.getElementsByTagName('p');
-        for (var i=0; i<p.length; i++){
-            p.value("")
-        }
+
     }
 }

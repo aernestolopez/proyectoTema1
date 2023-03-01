@@ -31,7 +31,69 @@ $nombre = $elresul['nick'];
     <title>Contacto</title>
 </head>
 
-<body>
+
+<body >
+<!--<nav class="navbar navbar-expand navbar-light bg-light">
+        <div class="container-fluid">
+            <div class="navbar-brand">
+                <img class="img-fluid" src="./img/logo.ico" width="30" height="30" alt="">
+            </div>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="./home.php">Home<span class="sr-only"></span></a>
+                </div>
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link active" href="./home.php">Contactanos<span class="sr-only"></span></a>
+                </div>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="nav-item nav-link active" href="./indexup.php">
+                        <img src="obtenerimg.php?nombre=<?= $nombre ?>" alt="login-icon" width="40 px" height="40 px"
+                            class="rounded-circle" />
+        </div></a>
+        </li>
+        </ul>
+        </div>
+    </nav>
+    <div class="d-flex justify-content-center align-items-center vh-100" > 
+    <div
+      class="bg-white p-5 rounded-5 text-secondary shadow"
+      style="width: 25rem">
+      <div class="d-flex justify-content-center">
+        <img
+          src="./img/user.png"
+          alt="login-icon"
+          style="height: 7rem"/>
+      </div>
+      <form>
+      <div class="text-center fs-1 fw-bold">Contáctanos</div>
+      <div class="input-group mt-4" id="email">
+        <input
+          class="form-control bg-light"
+          name="email"
+          type="email"
+          placeholder="Correo"
+          onchange="comprobar()"/>
+      </div>
+      <div class="input-group mt-1" id="text">
+        <input
+          class="form-control bg-light"
+          name="mensaje"
+          type="text"
+          placeholder="Mensaje"
+          onchange="comprobar()"/>
+      </div>
+      <div class="d-flex justify-content-around mt-1">
+      </div>
+      <input class="btn btn-primary text-white w-100 mt-4 fw-semibold shadow-sm" 
+      type="submit" name="submit1">
+      </input>
+      </form>
+      </div>
+-->
+
+    
     <nav class="navbar navbar-expand navbar-light bg-light">
         <div class="container-fluid">
             <div class="navbar-brand">
@@ -72,11 +134,17 @@ $nombre = $elresul['nick'];
             <label>Introduzca su correo:
                 <input class="form-control form-control-lg" name="email" type="email" placeholder="email" onchange="comprobar()">
             </label>
+            <div id="errorEmail">
+
+            </div>
         </div>
         <div id="text">
             <label> Introduzca su mensaje:
                 <input class="form-control form-control-lg" name="text" type="text" placeholder="mensaje" onchange="comprobar()">
             </label>
+            <div id="errorTexto">
+                
+                </div>
         </div>
         <input name="submit1" type="submit">
     </form>
@@ -103,6 +171,7 @@ $nombre = $elresul['nick'];
             }
         })
     </script>
+    
 </body>
 
 </html>
