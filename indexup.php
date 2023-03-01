@@ -74,6 +74,9 @@ header("location:login.php");
     <div class="navbar-nav">
       <a class="nav-item nav-link" href="./home.php">Home <span class="sr-only"></span></a>
     </div>
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="./contact.php">Contactanos <span class="sr-only"></span></a>
+    </div>
   </div>
     <ul class="nav navbar-nav navbar-right">
       <li>

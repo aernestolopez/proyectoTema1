@@ -20,7 +20,7 @@ $nombre = $elresul['nick'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./img/logo.ico">
     <link rel="stylesheet" href="./estilos.css"/>
-    <script src="./comprobacion.js"></script>
+    <script src="./comprobacion2.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
@@ -67,15 +67,15 @@ $nombre = $elresul['nick'];
             </li>
         </ol>
         
-    <form onsubmit="comprobar()">
+    <form onsubmit="">
         <div id="email">
             <label>Introduzca su correo:
-                <input class="form-control form-control-lg" name="email" type="email" placeholder="email">
+                <input class="form-control form-control-lg" name="email" type="email" placeholder="email" onchange="comprobar()">
             </label>
         </div>
         <div id="text">
             <label> Introduzca su mensaje:
-                <input class="form-control form-control-lg" name="text" type="text" placeholder="mensaje">
+                <input class="form-control form-control-lg" name="text" type="text" placeholder="mensaje" onchange="comprobar()">
             </label>
         </div>
         <input name="submit1" type="submit">
