@@ -19,7 +19,7 @@ $nombre = $elresul['nick'];
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./img/logo.ico">
-    <link rel="stylesheet" href="./estilos.css"/>
+    <link rel="stylesheet" href="./estilos.css" />
     <script src="./comprobacion2.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -32,68 +32,7 @@ $nombre = $elresul['nick'];
 </head>
 
 
-<body >
-<!--<nav class="navbar navbar-expand navbar-light bg-light">
-        <div class="container-fluid">
-            <div class="navbar-brand">
-                <img class="img-fluid" src="./img/logo.ico" width="30" height="30" alt="">
-            </div>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="./home.php">Home<span class="sr-only"></span></a>
-                </div>
-                <div class="navbar-nav">
-                    <a class="nav-item nav-link active" href="./home.php">Contactanos<span class="sr-only"></span></a>
-                </div>
-            </div>
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a class="nav-item nav-link active" href="./indexup.php">
-                        <img src="obtenerimg.php?nombre=<?= $nombre ?>" alt="login-icon" width="40 px" height="40 px"
-                            class="rounded-circle" />
-        </div></a>
-        </li>
-        </ul>
-        </div>
-    </nav>
-    <div class="d-flex justify-content-center align-items-center vh-100" > 
-    <div
-      class="bg-white p-5 rounded-5 text-secondary shadow"
-      style="width: 25rem">
-      <div class="d-flex justify-content-center">
-        <img
-          src="./img/user.png"
-          alt="login-icon"
-          style="height: 7rem"/>
-      </div>
-      <form>
-      <div class="text-center fs-1 fw-bold">Contáctanos</div>
-      <div class="input-group mt-4" id="email">
-        <input
-          class="form-control bg-light"
-          name="email"
-          type="email"
-          placeholder="Correo"
-          onchange="comprobar()"/>
-      </div>
-      <div class="input-group mt-1" id="text">
-        <input
-          class="form-control bg-light"
-          name="mensaje"
-          type="text"
-          placeholder="Mensaje"
-          onchange="comprobar()"/>
-      </div>
-      <div class="d-flex justify-content-around mt-1">
-      </div>
-      <input class="btn btn-primary text-white w-100 mt-4 fw-semibold shadow-sm" 
-      type="submit" name="submit1">
-      </input>
-      </form>
-      </div>
--->
-
-    
+<body>
     <nav class="navbar navbar-expand navbar-light bg-light">
         <div class="container-fluid">
             <div class="navbar-brand">
@@ -119,36 +58,38 @@ $nombre = $elresul['nick'];
     </nav>
 
     <div id="center">
-    <div id="app-2">
-        <h1 v-bind:title="message">Contáctanos</h1>
-    </div>
+        <div id="app-2">
+            <h1 v-bind:title="message">Contáctanos</h1>
+        </div>
         <div id="app-4">
-        <ol class="list">
-            <li style="text-align: center;" v-for="todo in todos">
-                {{ todo.text }}
-            </li>
-        </ol>
-        
-    <form onsubmit="">
-        <div id="email">
-            <label>Introduzca su correo:
-                <input class="form-control form-control-lg" name="email" type="email" placeholder="email" onchange="comprobar()">
-            </label>
-            <div id="errorEmail">
+            <ol class="list">
+                <li style="text-align: center;" v-for="todo in todos">
+                    {{ todo.text }}
+                </li>
+            </ol>
 
-            </div>
-        </div>
-        <div id="text">
-            <label> Introduzca su mensaje:
-                <input class="form-control form-control-lg" name="text" type="text" placeholder="mensaje" onchange="comprobar()">
-            </label>
-            <div id="errorTexto">
-                
+            <form onsubmit="">
+                <div id="email">
+                    <label>Introduzca su correo:
+                        <input class="form-control form-control-lg" name="email" type="email" placeholder="email"
+                            onchange="comprobar()">
+                    </label>
+                    <div id="errorEmail">
+
+                    </div>
                 </div>
+                <div id="text">
+                    <label> Introduzca su mensaje:
+                        <input class="form-control form-control-lg" name="text" type="text" placeholder="mensaje"
+                            onchange="comprobar()">
+                    </label>
+                    <div id="errorTexto">
+
+                    </div>
+                </div>
+                <input class="btn btn-primary text-white mt-4 fw-semibold shadow-sm" name="submit1" type="submit">
+            </form>
         </div>
-        <input name="submit1" type="submit">
-    </form>
-    </div>
     </div>
     <script>
         var app4 = new Vue({
@@ -163,7 +104,7 @@ $nombre = $elresul['nick'];
         })
     </script>
 
-<script>
+    <script>
         var app2 = new Vue({
             el: '#app-2',
             data: {
@@ -171,7 +112,7 @@ $nombre = $elresul['nick'];
             }
         })
     </script>
-    
+
 </body>
 
 </html>
