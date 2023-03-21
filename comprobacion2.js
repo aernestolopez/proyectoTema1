@@ -44,8 +44,8 @@ function comprobarPassword(){
 function comprobarTexto(){
     var texto=document.getElementById('text').value.length
     //Si el texto tiene menos de 12 caracteres mostramos un error
-    if(texto>12){
-        errorTexto.innerHTML='El texto tiene mas de 12 caracteres'
+    if(texto>12 || texto==0){
+        errorTexto.innerHTML='El texto tiene mas de 12 caracteres o no tiene'
     }else{
         //Si tiene mas no mostramos nada
     errorTexto.innerHTML=' '
@@ -79,8 +79,8 @@ function comprobarNumeroTel(){
 function comprobarNick(){
     var texto=document.getElementById('nick').value.length
     //Si el texto tiene menos de 12 caracteres mostramos un error
-    if(texto>12){
-        errorNick.innerHTML='El texto tiene mas de 12 caracteres'
+    if(texto>12 || texto==0){
+        errorNick.innerHTML='El texto tiene mas de 12 caracteres o no tiene'
     }else{
         //Si tiene mas no mostramos nada
     errorNick.innerHTML=' '

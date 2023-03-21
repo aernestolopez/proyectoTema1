@@ -112,22 +112,23 @@ header("location:login.php");
         <p><?=$nickname?></p>
         <?php endif; ?></div>
         <!--seleccion de imagen-->
-      <form action="" method="post" enctype="multipart/form-data">
+      <form action="" method="post" enctype="multipart/form-data" onchange="comprobar()">
         Editar nombre de usuario
         <input
           class="form-control bg-light"
           name="Cambiousuario"
           type="text"
+          id="text"
+          onchange="comprobarTexto()"
           value="<?=$nickname?>"
           />
+          <div id="errorTexto"></div>
         Selecciona una imagen:
         <input type="file" name="image"/>
         <br>
         <br>
-        <?php if(!empty($mensaje)):?>
-          <p style="color:red"><?=$mensaje?></p>
-          <?php endif;?>
-        <input type="submit" name="submit" value="Subir"/>
+        
+        <input type="submit" id="submit" name="submit" value="Subir"/>
 
         <div class="d-flex gap-1 justify-content-center mt-1">
         <p style="color:red">¿Quiere borrar la cuenta?</p>
@@ -137,3 +138,4 @@ header("location:login.php");
       </div>
 </body>
 </html>
+<script src="./comprobacion2.js"></script>
