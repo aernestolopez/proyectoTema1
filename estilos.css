@@ -5,3 +5,15 @@
     text-align: center;
     list-style-position: inside;
 }
+#errorEmail{
+    color: red !important;
+}
+#errorPassword{
+    color: red !important;
+}
+#errorTexto{
+    color:red !important;
+}
+#errorTel{
+    color: red !important;
+}

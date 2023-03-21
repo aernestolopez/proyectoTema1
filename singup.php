@@ -1,3 +1,5 @@
+<!--Los mensajes de error que se mostraban antes utilizando PHP ya no se muestran debido al uso de framework para validacion-->
+
 <?php
 require './conexion/conexion.php';
 $error='';
@@ -62,6 +64,7 @@ if(isset($_POST['entrar'])){
     integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" 
     crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="./img/logo.ico">
+    <link rel="stylesheet" href="./estilos.css"/>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -79,7 +82,7 @@ if(isset($_POST['entrar'])){
           alt="login-icon"
           style="height: 7rem"/>
       </div>
-      <form action="" method="post">
+      <form action="" method="post" onchange="comprobar()">
       <div class="text-center fs-1 fw-bold">Crear Cuenta</div>
       <div class="input-group mt-4">
         <div class="input-group-text bg-light">
@@ -92,7 +95,10 @@ if(isset($_POST['entrar'])){
           class="form-control bg-light"
           name="usuario"
           type="text"
-          placeholder="Usuario"/>
+          id="text"
+          placeholder="Usuario"
+          onchange="comprobarTexto()"/>
+          <div id="errorTexto"></div>
       </div>
       <div class="input-group mt-1">
         <div class="input-group-text bg-light">
@@ -105,7 +111,10 @@ if(isset($_POST['entrar'])){
           class="form-control bg-light"
           name="nickname"
           type="text"
-          placeholder="Nickname"/>
+          id="nick"
+          placeholder="Nickname"
+          onchange="comprobarNick()"/>
+          <div id="errorNick"></div>
       </div>
       <div class="input-group mt-1">
         <div class="input-group-text bg-light">
@@ -118,7 +127,10 @@ if(isset($_POST['entrar'])){
           class="form-control bg-light"
           name="contrasenia"
           type="password"
-          placeholder="Contraseña"/>
+          id="password"
+          placeholder="Contraseña"
+          onchange="comprobarPassword()"/>
+          <div id="errorPassword"></div>
         <div class="input-group mt-1">
             <div class="input-group-text bg-light">
               <img
@@ -130,13 +142,14 @@ if(isset($_POST['entrar'])){
         class="form-control"
           name="verificarContrasenia"
           type="password"
-          placeholder="Verificar Contraseña"/>
+          id="password2"
+          placeholder="Verificar Contraseña"
+          onchange="validarContrasenia()"/>
+          <div id="errorPassword2"></div>
       </div>
-      <?php if(!empty($error)): ?>
-        <p style="color:red"><?=$error?></p>
-        <?php endif; ?>
+
       <input class="btn btn-primary text-white w-100 mt-4 fw-semibold shadow-sm" 
-      type="submit" value="Crear Cuenta" name="entrar">
+      type="submit" value="Crear Cuenta" name="entrar" id="submit">
       </input>
       <div class="d-flex gap-1 justify-content-center mt-1">
         <div>¿Tienes Cuenta?</div>
@@ -147,3 +160,4 @@ if(isset($_POST['entrar'])){
       </form>
   </body>
 </html>
+<script src="./comprobacion2.js"></script>

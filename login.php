@@ -1,3 +1,4 @@
+<!--Los mensajes de error que se mostraban antes utilizando PHP ya no se muestran debido al uso de framework para validacion-->
 <?php
 require './conexion/conexion.php';
 $error='';
@@ -57,7 +58,8 @@ if(isset($_POST['entrar'])){
           alt="login-icon"
           style="height: 7rem"/>
       </div>
-      <form action="" method="post">
+      <form action="" method="post" onchange="comprobar()">
+
       <div class="text-center fs-1 fw-bold">Bienvenido/a de nuevo</div>
       <div class="input-group mt-4">
         <div class="input-group-text bg-light">
@@ -66,11 +68,17 @@ if(isset($_POST['entrar'])){
             alt="username-icon"
             style="height: 1rem"/>
         </div>
+
         <input
           class="form-control bg-light"
           name="usuario"
           type="text"
-          placeholder="Usuario"/>
+          id="text"
+          placeholder="Usuario"
+          onchange="comprobarTexto()"
+          />
+          <div id="errorTexto"></div>
+
       </div>
       <div class="input-group mt-1">
         <div class="input-group-text bg-light">
@@ -79,25 +87,30 @@ if(isset($_POST['entrar'])){
             alt="password-icon"
             style="height: 1rem"/>
         </div>
+
         <input
           class="form-control bg-light"
           name="contrasenia"
           type="password"
-          placeholder="Contraseña"/>
+          placeholder="Contraseña"
+          id="password"
+          onchange="comprobarPassword()"/>
+          <div id="errorPassword"></div>
       </div>
+
       <!--mostramos el mensaje de error-->
-      <?php if(!empty($error)): ?>
-        <p style="color:red"><?=$error?></p>
-        <?php endif; ?>
+      
       <div class="d-flex justify-content-around mt-1">
         <div class="d-flex align-items-center gap-1">
           <input class="form-check-input" type="checkbox" name="recordar"/>
           <div class="pt-1" style="font-size: 0.9rem">Recuérdame</div>
         </div>
       </div>
+
       <input class="btn btn-primary text-white w-100 mt-4 fw-semibold shadow-sm" 
-      type="submit" value="Iniciar Sesión" name="entrar">
+      type="submit" value="Iniciar Sesión" name="entrar" id="submit">
       </input>
+
       </form>
       <div class="d-flex gap-1 justify-content-center mt-1">
         <div>¿No tienes cuenta?</div>
@@ -106,3 +119,4 @@ if(isset($_POST['entrar'])){
       </div>
   </body>
 </html>
+<script src="./comprobacion2.js"></script>

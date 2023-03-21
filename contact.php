@@ -20,7 +20,6 @@ $nombre = $elresul['nick'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./img/logo.ico">
     <link rel="stylesheet" href="./estilos.css" />
-    <script src="./comprobacion2.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
@@ -68,26 +67,33 @@ $nombre = $elresul['nick'];
                 </li>
             </ol>
 
-            <form onsubmit="">
-                <div id="email">
+            <form onchange="comprobar()">
+                <div>
                     <label>Introduzca su correo:
-                        <input class="form-control form-control-lg" name="email" type="email" placeholder="email"
-                            onchange="comprobar()">
+                        <input class="form-control form-control-lg"  id='email' type="email" placeholder="email"
+                            onchange="comprobarEmail()">
                     </label>
                     <div id="errorEmail">
 
                     </div>
                 </div>
-                <div id="text">
+                <div>
                     <label> Introduzca su mensaje:
-                        <input class="form-control form-control-lg" name="text" type="text" placeholder="mensaje"
-                            onchange="comprobar()">
+                        <input class="form-control form-control-lg" id="text" type="text" placeholder="mensaje"
+                            onchange="comprobarTexto()">
                     </label>
                     <div id="errorTexto">
 
                     </div>
                 </div>
-                <input class="btn btn-primary text-white mt-4 fw-semibold shadow-sm" name="submit1" type="submit">
+                <div>
+                    <label> Introduzca su numero de telefono:
+                        <input class="form-control form-control-lg" id="tel" type="text" placeholder="numero de telefono"
+                            onchange="comprobarNumeroTel()">
+                    </label>
+                    <div id="errorTel">
+                    </div>
+                <input class="btn btn-primary text-white mt-4 fw-semibold shadow-sm" name="submit1" id="submit" type="submit">
             </form>
         </div>
     </div>
@@ -116,3 +122,4 @@ $nombre = $elresul['nick'];
 </body>
 
 </html>
+<script src="./comprobacion2.js"></script>
